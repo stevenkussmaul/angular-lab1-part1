@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <title>todo list</title>
 </head>
 <body>
@@ -23,9 +23,10 @@
                 <ol class="ol-list">
                     <li ng-repeat="item in $ctrl.todoItemsArray track by $index"
                         ng-class="{ 'completed': item.completed === true 
-                                    }"
-                    >{{ item.task }} 
-                        <i class="material-icons">close</i>
+                                    }"> 
+                    <button class="complete-button">Complete</button>
+                    {{ item.task }}
+                    <i class="material-icons">close</i>
                     </li>
                 </ol>
                 <input type="text" placeholder="Add your to do">

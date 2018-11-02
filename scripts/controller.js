@@ -22,28 +22,6 @@ function TodoCtrl() {
         }
     ];
 
-
-
-    vm.addCrazyWord = () => {
-        vm.randomWord = vm.words[Math.floor(Math.random()*vm.words.length)];
-        vm.randomClasses = vm.classes[Math.floor(Math.random()*vm.phrases.length)];
-
-        vm.textToDisplay.push({
-            text: vm.randomWord,
-            styling: vm.randomClasses
-        });
-    }
-
-    vm.addCrazyPhrase = () => {
-        vm.randomPhrase = vm.phrases[Math.floor(Math.random()*vm.phrases.length)];
-        vm.randomClasses = vm.classes[Math.floor(Math.random()*vm.phrases.length)];
-
-        vm.textToDisplay.push({
-            text: vm.randomPhrase,
-            styling: vm.randomClasses
-        });
-    }
-
 }
 //getter syntax
 // string, then method of controller
