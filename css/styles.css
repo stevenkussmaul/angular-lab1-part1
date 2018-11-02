@@ -18,7 +18,7 @@ body {
     top: 50%;
     transform: translate(-50%,-50%);
     /* height: 50vh; */
-    width: 50vh;
+    width: 70vh;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -77,9 +77,14 @@ input {
     /* box-sizing: border-box; */
     /* cursor: pointer; */
 }
-.ol-list {
+
+li {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     /* justify-content: space-between; */
-    align-items: space-between;
+    /* align-items: space-between; */
+}
+
+i {
+    justify-content: flex-end;
 }
