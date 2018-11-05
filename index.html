@@ -19,25 +19,29 @@
             <p class="heading">TODO List</p>
             <p class="subheading">A place to store things to do!</p>
             <form class="list-form">
-                <input type="text" placeholder="Filter your to-do's">
+                <input type="text" ng-model="$ctrl.filterList" placeholder="Filter your to-do's">
                 <ol class="ol-list">
-                    <li ng-repeat="item in $ctrl.todoItemsArray track by $index">
-                        <section class="btn-p">
-                            <button class="complete-button">Complete</button>
+                    <li ng-repeat="item in $ctrl.todoItemsArray | filter: $ctrl.filterList track by $index" class="li">
+                        <section class="complete-btn-container">
+                            <button class="complete-button" ng-if="!item.completed" ng-click="item.completed=true">Complete</button>
                         </section>
                         <section>
-                            <p ng-class="{ 'completed': item.completed === true 
+                            <p ng-class="{ 'completed': item.completed === true  
                                 }" class="list-item">{{ item.task }}</p>
                         </section>
-                        <section>
-                            <i class="material-icons">close</i>
+                        <section class="x-btn">
+                            <i ng-click="$ctrl.removeTodo($index);" cursor="pointer"
+                                class="material-icons">close</i>
                         </section>
                         
                         
                     </li>
                 </ol>
-                <input type="text" placeholder="Add your to do">
-                <button class="add-btn">ADD</button>
+                <input type="text" 
+                        class="add-input" 
+                        ng-model="$ctrl.listyList.task"
+                        placeholder="Add your to do">
+                <button class="add-btn" ng-click="$ctrl.addTodo($ctrl.listyList);">ADD</button>
 
             </form>
 
@@ -45,6 +49,7 @@
 
     </section>
 
+    <!-- ng-submit="$ctrl.todoItemsArray($ctrl.item);" -->
 
     
     <script src="https://code.angularjs.org/1.6.5/angular.js"></script>

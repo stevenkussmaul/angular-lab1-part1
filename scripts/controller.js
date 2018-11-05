@@ -21,6 +21,13 @@ function TodoCtrl() {
             completed: true
         }
     ];
+    vm.addTodo = (newItem) => {
+        vm.todoItemsArray.push(angular.copy(newItem));
+    }
+    vm.removeTodo = (itemIndex) => {
+        console.log(itemIndex);
+        vm.todoItemsArray.splice(itemIndex,1);
+    }
 
 }
 //getter syntax

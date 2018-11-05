@@ -99,15 +99,9 @@ input {
 li {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     /* align-items: space-between; */
     /* border: 2px solid red; */
-
-}
-
-i {
-    justify-content: flex-end;
-    /* border: 2px solid black; */
 
 }
 
@@ -116,10 +110,12 @@ i {
     align-self: flex-start;
 
 }
-/* 
-.btn-p {
-    display:flex;
-    flex-direction: row;
-    width: 49%;
-    border: 2px solid gold;
-} */
+
+.li {
+    position: relative;
+}
+.x-btn{
+    position: absolute;
+    right: 0;
+
+}
