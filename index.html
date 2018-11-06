@@ -21,13 +21,13 @@
             <form class="list-form">
                 <input type="text" ng-model="$ctrl.filterList" placeholder="Filter your to-do's">
                 <ol class="ol-list">
-                    <li ng-repeat="item in $ctrl.todoItemsArray | filter: $ctrl.filterList track by $index" class="li">
+                    <li ng-repeat="item in $ctrl.todoItemsArray | filter: $ctrl.filterList track by $index" id="li">
                         <section class="complete-btn-container">
-                            <button class="complete-button" ng-if="!item.completed" ng-click="item.completed=true">Complete</button>
+                            <button class="complete-button" ng-if="!item.completed" ng-click="item.completed = true">Complete</button>
                         </section>
-                        <section>
-                            <p ng-class="{ 'completed': item.completed === true  
-                                }" class="list-item">{{ item.task }}</p>
+                        <section class="item-task">
+                            <p  ng-class="{ 'completed': item.completed === true }" 
+                                class="list-item">{{ item.task }}</p>
                         </section>
                         <section class="x-btn">
                             <i ng-click="$ctrl.removeTodo($index);" cursor="pointer"
@@ -48,8 +48,6 @@
         </section>
 
     </section>
-
-    <!-- ng-submit="$ctrl.todoItemsArray($ctrl.item);" -->
 
     
     <script src="https://code.angularjs.org/1.6.5/angular.js"></script>
